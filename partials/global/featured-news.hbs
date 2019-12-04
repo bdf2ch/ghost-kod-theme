@@ -1,0 +1,13 @@
+{{#get "posts" filter="featured:true"}}
+{{! Loop through our featured posts }}
+    <div class="featured-posts">
+    {{#foreach posts}}
+        <div class="featured-post">{{title}}</div>
+    {{else}}
+    {{! If there are no featured posts}}
+        <p>No posts!</p>
+    {{/foreach}}
+    </div>
+{{else}}
+    <p class="error">{{error}}</p>
+{{/get}}
