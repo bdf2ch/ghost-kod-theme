@@ -1,3 +1,8 @@
+// Featured posts menu toggle
+$('.featured-post.dropdown').click(() => {
+  $('.featured-posts').toggleClass('expanded')
+});
+
 //
 // Navbar
 //

@@ -17,6 +17,18 @@
       </div>
 
       <div class="post-card-body">
+          <div class="post-card-meta_">
+              {{^is "tag, post"}}
+                  <p class="post-card-label_">{{primary_tag.name}}</p>
+              {{/is}}
+              <time class="post-card-date_" datetime="{{date published_at format="YYYY-MM-DD"}}">
+                  {{#is "tag, post"}}
+                      {{date published_at format="D MMMM"}}
+                  {{else}}
+                      {{date published_at format="DD.MM"}}
+                  {{/is}}
+              </time>
+          </div>
         <h2 class="post-card-title">{{title}}</h2>
         <p class="post-card-excerpt">{{excerpt characters="140"}}...</p>
       </div>

@@ -1,0 +1,37 @@
+{{#get "posts" filter="featured:true" include="tags"}}
+    <div class="featured-posts">
+        {{#if posts}}
+        <article>
+            <div class="featured-post dropdown">
+                <span class="featured-post-title">{{posts.0.title}}</span>
+                <div class="featured-post-meta">
+                    <div class="featured-post-meta-container">
+                        <span class="featured-post-tag">{{posts.0.primary_tag.name}},</span>
+                        <span class="featured-post-date">{{date posts.0.published_at format="DD.MM"}}</span>
+                    </div>
+                    <span class="featured-post-expander">&#9662; Материалы недели</span>
+                </div>
+            </div>
+            <div class="featured-post"></div>
+            <div class="featured-post"></div>
+        </article>
+        {{/if}}
+        {{#foreach posts as |post|}}
+            {{#post}}
+                <article>
+                    <a class="featured-post" href="{{url}}">
+                        <span class="featured-post-title">{{title}}</span>
+                        <div class="featured-post-meta">
+                            <div class="featured-post-meta-container">
+                                <span class="featured-post-tag">{{primary_tag.name}},</span>
+                                <span class="featured-post-date">{{date format="DD.MM"}}</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {{/post}}
+        {{/foreach}}
+    </div>
+{{else}}
+    <p class="error">{{error}}</p>
+{{/get}}
