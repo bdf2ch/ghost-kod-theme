@@ -5,7 +5,7 @@ $image-height-3: 300px
 
 
 .post-card-wrapper
-
+  background: top / contain no-repeat
   #{$expander} .post-card &
     background: top / 0 auto no-repeat
     .post-card-meta
@@ -15,7 +15,6 @@ $image-height-3: 300px
     background: top / contain no-repeat
     .post-card-wrapper
       background: top center / contain auto no-repeat
-      border: 3px solid red
     .post-card-meta
       display: flex
 
@@ -127,6 +126,9 @@ $image-height-3: 300px
     font-weight: 500
     min-height: 20px
     background-color: #fff
+    .night-mode &
+      background-color: $night-mode-dark-gray
+      box-shadow: none
     +media-breakpoint-up(lg)
       display: none
     .post-card-label_
@@ -138,11 +140,17 @@ $image-height-3: 300px
       color: #008dcd
       margin-right: 30px
       text-transform: uppercase
+      .night-mode &
+        border-color: $night-mode-light-gray
+        color: $night-mode-light-gray
     .post-card-date_
       padding: 5px
+      font-size: 13px
       color: #008dcd
       text-align: left
       margin-left: 0px
+      .night-mode &
+        color: $night-mode-light-gray
 
   .night-mode &
     background-color: $night-mode-dark-gray
